@@ -1,4 +1,4 @@
-  import streamlit as st
+import streamlit as st
 from keras.models import load_model
 from PIL import Image
 import numpy as np
@@ -9,7 +9,7 @@ from util import classify, set_background
 set_background('./bgs/bg5.png')
 
 # set title
-st.title('Pneumonia classification')  
+st.title('Pneumonia classification')
 
 # set header
 st.header('Please upload a chest X-ray image')
@@ -18,10 +18,10 @@ st.header('Please upload a chest X-ray image')
 file = st.file_uploader('', type=['jpeg', 'jpg', 'png'])
 
 # load classifier
-model = load_model('./pneumonia_classifier.h5')
+model = load_model('./model/pneumonia_classifier.h5')
 
 # load class names
-with open('./labels.txt', 'r') as f:
+with open('./model/labels.txt', 'r') as f:
     class_names = [a[:-1].split(' ')[1] for a in f.readlines()]
     f.close()
 
@@ -35,5 +35,4 @@ if file is not None:
 
     # write classification
     st.write("## {}".format(class_name))
-    st.write("### score: {}%".format(int(conf_score * 1000) / 10))
-
+    st.write("### score: {}%".format(int(conf_score * 1000) / 10))     
