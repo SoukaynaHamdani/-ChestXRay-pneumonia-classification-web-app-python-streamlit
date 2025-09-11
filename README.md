@@ -37,7 +37,7 @@ The model was trained on the **Chest X-Ray Images (Pneumonia)** dataset:
 
 ## Project Structure
 
-*   `main.py`: Main Streamlit application script.
+*   `code.py`: Main Streamlit application script.
 *   `util.py`: Utility functions for background setting and image classification.
 *   `./model/`: Contains the trained model (`pneumonia_classifier.h5`) and class labels (`labels.txt`).
  
