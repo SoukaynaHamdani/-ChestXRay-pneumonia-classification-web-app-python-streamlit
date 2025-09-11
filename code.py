@@ -6,7 +6,7 @@ import numpy as np
 from util import classify, set_background
 
 
-set_background('./bgs/bg5.png')
+set_background('./bgs/bg.jp')
 
 # set title
 st.title('Pneumonia classification')
@@ -36,3 +36,4 @@ if file is not None:
     # write classification
     st.write("## {}".format(class_name))
     st.write("### score: {}%".format(int(conf_score * 1000) / 10))     
+
